@@ -1,0 +1,13 @@
+#!/bin/bash
+
+roleName=$1
+principalId=$2
+scope=$3
+
+# Login to Azure
+az login
+
+# Assign Role
+az role assignment create --assignee $principalId --role $roleName --scope $scope
+
+echo "Assigned role $roleName to $principalId at scope $scope"
