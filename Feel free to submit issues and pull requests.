@@ -1,0 +1,7 @@
+
+### How to Push to GitHub
+
+1. Initialize a new Git repository in the `Azure-RBAC-Automation` folder:
+
+   ```bash
+   git init
