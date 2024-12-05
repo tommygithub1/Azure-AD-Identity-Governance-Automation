@@ -1,0 +1,14 @@
+
+Azure-RBAC-Automation/
+│
+├── PowerShell/
+│   ├── Assign-Role.ps1
+│   ├── Create-CustomRole.ps1
+│   └── Set-RBAC-Assignment.ps1
+│
+├── AzureCLI/
+│   ├── Assign-Role.sh
+│   ├── Create-CustomRole.sh
+│   └── Set-RBAC-Assignment.sh
+│
+└── README.md
