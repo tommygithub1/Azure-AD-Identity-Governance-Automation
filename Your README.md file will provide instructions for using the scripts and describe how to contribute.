@@ -1,0 +1,33 @@
+# Azure RBAC Automation
+
+This repository contains scripts to automate Role-Based Access Control (RBAC) role assignments and custom roles using PowerShell and Azure CLI.
+
+## Prerequisites
+- Azure Subscription
+- Azure CLI installed
+- PowerShell Az module installed
+- Azure account with appropriate permissions
+
+## Scripts
+
+### PowerShell
+
+- **Assign-Role.ps1**: Assigns a role to a user, group, or service principal.
+- **Create-CustomRole.ps1**: Creates a custom RBAC role in Azure.
+- **Set-RBAC-Assignment.ps1**: Sets RBAC assignments, including reassignments.
+
+### Azure CLI
+
+- **Assign-Role.sh**: Assigns a role to a user, group, or service principal.
+- **Create-CustomRole.sh**: Creates a custom RBAC role in Azure.
+- **Set-RBAC-Assignment.sh**: Sets RBAC assignments, including reassignments.
+
+## Usage
+
+### PowerShell Example
+
+1. Open PowerShell.
+2. Run `Assign-Role.ps1`:
+
+   ```powershell
+   .\Assign-Role.ps1 -roleName "Contributor" -principalId "user@example.com" -scope "/subscriptions/{subscriptionId}"
