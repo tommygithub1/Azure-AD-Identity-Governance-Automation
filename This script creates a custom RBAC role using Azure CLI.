@@ -1,0 +1,14 @@
+#!/bin/bash
+
+roleName=$1
+description=$2
+permissions=$3
+
+# Login to Azure
+az login
+
+# Create Custom Role
+az role definition create --role-definition \
+  "{ \"Name\": \"$roleName\", \"Description\": \"$description\", \"Actions\": [$permissions], \"AssignableScopes\": [\"/subscriptions/{subscriptionId}\"] }"
+
+echo "Custom role '$roleName' created with permissions $permissions"
