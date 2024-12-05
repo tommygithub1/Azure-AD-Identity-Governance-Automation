@@ -1,0 +1,16 @@
+param (
+    [string]$roleName,
+    [string]$principalId,
+    [string]$scope
+)
+
+# Login to Azure account
+Connect-AzAccount
+
+# Remove existing role assignments before assigning new one
+Remove-AzRoleAssignment -ObjectId $principalId -RoleDefinitionName $roleName -Scope $scope -Force
+
+# Assign Role to principal
+New-AzRoleAssignment -ObjectId $principalId -RoleDefinitionName $roleName -Scope $scope
+
+Write-Host "Successfully reassigned role $roleName to $principalId at scope $scope"
