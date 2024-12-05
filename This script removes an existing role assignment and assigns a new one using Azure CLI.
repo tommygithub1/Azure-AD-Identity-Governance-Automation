@@ -1,0 +1,16 @@
+#!/bin/bash
+
+roleName=$1
+principalId=$2
+scope=$3
+
+# Login to Azure
+az login
+
+# Remove existing Role Assignment
+az role assignment delete --assignee $principalId --role $roleName --scope $scope
+
+# Assign Role
+az role assignment create --assignee $principalId --role $roleName --scope $scope
+
+echo "Successfully reassigned role $roleName to $principalId at scope $scope"
