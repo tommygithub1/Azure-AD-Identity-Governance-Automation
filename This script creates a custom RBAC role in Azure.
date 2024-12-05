@@ -1,0 +1,16 @@
+param (
+    [string]$roleName,
+    [string]$description,
+    [array]$permissions
+)
+
+# Login to Azure account
+Connect-AzAccount
+
+# Create Custom Role Definition
+$roleDefinition = New-AzRoleDefinition -RoleName $roleName `
+    -Description $description `
+    -Actions $permissions `
+    -AssignableScopes "/subscriptions/{subscriptionId}"
+
+Write-Host "Custom role '$roleName' created with permissions $permissions"
