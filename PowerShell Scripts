@@ -1,0 +1,13 @@
+param (
+    [string]$roleName,
+    [string]$principalId,
+    [string]$scope
+)
+
+# Login to Azure account
+Connect-AzAccount
+
+# Assign Role to a principal
+New-AzRoleAssignment -ObjectId $principalId -RoleDefinitionName $roleName -Scope $scope
+
+Write-Host "Assigned role $roleName to $principalId at scope $scope"
